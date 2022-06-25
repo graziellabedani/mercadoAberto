@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,12 +11,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Mercado Free',
       theme: ThemeData(
         
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Mercado Free'),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -45,30 +48,17 @@ class _MyHomePageState extends State<MyHomePage> {
     
     return Scaffold(
       appBar: AppBar(
-        
-        title: Text(widget.title),
+        backgroundColor: Colors.yellow,
+        title: Text(widget.title, style: TextStyle(color: Colors.black,)),
+        leading: Icon (Icons.menu, color: Colors.black,) ,
+        actions: [
+          IconButton(
+            onPressed:(){},
+            icon: Icon(Icons.shopping_cart_checkout_outlined,color: Colors.black),
+          )
+        ],
       ),
-      body: Center(
-        
-        child: Column(
-          
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), 
+      
     );
   }
 }
